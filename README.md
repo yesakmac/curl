@@ -8,7 +8,7 @@
 
 Or from source:
 <pre>
-  git clone git://github.com/ianjorgensen/curl.git 
+  git clone git://github.com/yesakmac/curl.git 
   cd curl
   npm link .
 </pre>
@@ -22,6 +22,10 @@ Or from source:
 
 <pre>curl.post(url, body, options, function(err, response, body) {});</pre>
 
+### curl.put
+
+<pre>curl.put(url, body, options, function(err, response, body) {});</pre>
+
 ### curl.getJSON
 
 <pre>curl.getJSON(url, options, function(err, response, data){});</pre>
@@ -29,3 +33,7 @@ Or from source:
 ### curl.postJSON
 
 <pre>curl.postJSON(url, data, options, function(err, response, data){});</pre>
+
+### curl.putJSON
+
+<pre>curl.putJSON(url, data, options, function(err, response, data){});</pre>
