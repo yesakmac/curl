@@ -78,3 +78,40 @@ var postJSON = function(url, data, options, callback) {
 	post(url, JSON.stringify(data), options, callback);
 };
 exports.postJSON = postJSON;
+
+
+//yesakmac added the put functionality so we can now interact with CouchDB. 
+var putJSON = function(url, data, options, callback) {
+	if(!callback) {
+		callback = options;
+		options = {};
+	}
+	
+	var options = merge(options, {'content-type': 'application/json'});
+	
+	delete options.uri;
+	
+	put(url, JSON.stringify(data), options, callback);
+};
+exports.putJSON = putJSON;
+
+//yesakmac added the put functionality so we can now interact with CouchDB. 
+var put = function(url, body, options, callback) {
+	if(!callback && typeof options === 'function') {
+		callback = options;
+		options = {};
+	}
+
+	callback = callback || noop;
+	
+	var options = merge(options,{
+		method: 'PUT',
+		url: url,
+		body: body
+	});
+		
+	delete options.uri;
+	
+	request(options, callback);
+};
+exports.put = put;
