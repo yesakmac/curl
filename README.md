@@ -1,4 +1,4 @@
-# CURL -- Simple client url library, with high level request functions
+# CURL -- Simple client url library, with high level request functions to interact with an API
 
 ## Install
 
